@@ -49,7 +49,7 @@ const AdminProfile = () => {
             setIsLoading(false); // Ensure loading state is updated
           }
         };
-        // console.log("Profile Picture URL:", adminData.profilePic);
+        
 
         fetchAdminProfile();
     }, []);
