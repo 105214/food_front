@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Container, Card, Alert } from "react-bootstrap";
-import "./css/AdminLogout.css";
+import "./css/adminlogout.css";
 
 const AdminLogout = () => {
   const navigate = useNavigate();
