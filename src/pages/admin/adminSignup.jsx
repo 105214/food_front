@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Form, Button, Alert, Container, Card } from "react-bootstrap";
-import "./css/Adminsignup.css";
+import "./css/AdminSignup.css";
 
 const AdminSignup = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +22,7 @@ const AdminSignup = () => {
     } else {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     }
-    // setFormData({ ...formData, [e.target.name]: e.target.value });
+   
   };
 
   const handleSubmit = async (e) => {
