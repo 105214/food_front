@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Container, Card, Alert } from "react-bootstrap";
-import "./css/Adminlogout.css";
+import "./css/AdminLogout.css";
 
 const AdminLogout = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const AdminLogout = () => {
   const [error, setError] = useState("");
   
   useEffect(() => {
-    // Check if token exists when component mounts
+    
     const token = localStorage.getItem("token");
     if (!token) {
       setError("Unauthorized: No token found");
