@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Card, Row, Col, Image, Button, Alert, Spinner } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./AdminProfile.css";
+import "./adminprofile.css";
 
 const AdminProfile = () => {
   const [adminData, setAdminData] = useState(null);
