@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Form, Button, Alert, Container, Card } from "react-bootstrap";
-import "./css/AdminSignup.css";
+import "./css/adminsignup.css";
 
 const AdminSignup = () => {
   const [formData, setFormData] = useState({
