@@ -41,14 +41,14 @@ const AdminLogout = () => {
       
       const data = await response.json();
       
-      // Clear token from localStorage
+    
       localStorage.removeItem("token");
       
-      // Update UI with success message
+   
       setMessage(data.message || "Logged out successfully");
       setError("");
       
-      // Redirect after short delay
+    
       setTimeout(() => navigate("/admin/adminlogin"), 2000);
     } catch (err) {
       setError(err.message || "Logout failed");
