@@ -6,7 +6,6 @@ import BanerImage2 from "./image/2.jpg"
 import BanerImage3 from "./image/3.jpeg"
 import Restaurant from "./image/res.jpg"
 import Dish from "./image/dish.webp"
-import Review1 from "./image/Review1.jpg"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/UserHome.css"; // Import CSS file
 
