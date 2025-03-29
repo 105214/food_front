@@ -7,10 +7,10 @@ import BanerImage3 from "./image/3.jpeg"
 import Restaurant from "./image/res.jpg"
 import Dish from "./image/dish.webp"
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./css/UserHome.css"; // Import CSS file
+import "./css/userHome.css"; // Import CSS file
 
 const HomePage = () => {
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate(); 
 
   return (
     <div>
