@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Button, ListGroup, Alert, Badge, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./deletecart.css";
+import "./deleteCart.css";
 
 const DeleteCart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -54,64 +54,7 @@ const DeleteCart = () => {
       setIsLoading(false);
     }
   };
-  // const fetchCart = async () => {
-  //   try {
-  //     // Reset loading and error states
-  //     setIsLoading(true);
-  //     setError("");
-
-  //     // Retrieve token before making the request
-  //     const token = localStorage.getItem("token");
-      
-  //     // Check if token exists before making the request
-  //     if (!token) {
-  //       setError("Please log in again");
-  //       setIsLoading(false);
-  //       return;
-  //     }
-
-  //     const response = await axios.get("http://localhost:3001/api/cart/getcart", {
-  //       headers: { 
-  //         Authorization: `Bearer ${token}`,
-  //         'Content-Type': 'application/json'
-  //       },
-  //     });
-
-  //     console.log("Cart Fetch Response:", response.data);
-      
-  //     // Ensure we're handling the cart data correctly
-  //     const fetchedCartItems = response.data.cart?.items || 
-  //                               response.data.items || 
-  //                               response.data || 
-  //                               [];
-      
-  //     setCartItems(fetchedCartItems);
-  //     setIsLoading(false);
-  //   } catch (err) {
-  //     console.error("Error fetching cart:", err);
-  //     setIsLoading(false);
-
-  //     // More comprehensive error handling
-  //     if (err.response) {
-  //       switch (err.response.status) {
-  //         case 401:
-  //           setError("Authentication failed. Please log in again.");
-  //           localStorage.removeItem("token");
-  //           // Optional: redirect to login page
-  //           break;
-  //         case 404:
-  //           setError("Cart not found. Please try again.");
-  //           break;
-  //         default:
-  //           setError(err.response.data?.message || "Error fetching cart items");
-  //       }
-  //     } else if (err.request) {
-  //       setError("No response received from server. Please check your connection.");
-  //     } else {
-  //       setError("Error setting up the request. Please try again.");
-  //     }
-  //   }
-  // };
+ 
 
   useEffect(() => {
     fetchCart();
@@ -267,100 +210,3 @@ const DeleteCart = () => {
 };
 
 export default DeleteCart;
-
-
-
-
-
-// import React, { useState, useEffect } from "react";
-// import { Container, Button, ListGroup, Alert } from "react-bootstrap";
-// import axios from "axios";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "./deletecart.css";
-
-// const DeleteCart = () => {
-//   const [cartItems, setCartItems] = useState([]);
-//   const [message, setMessage] = useState("");
-//   const [error, setError] = useState("");
-
-//   useEffect(() => {
-//     const fetchCart = async () => {
-//       try {
-//         const response = await axios.get("http://localhost:3001/api/cart/getcart", {
-//           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-//         });
-//         console.log("Cart Fetch Response:", response.data);
-//         setCartItems(response.data.cart?.items || []);
-//       } catch (err) {
-//         console.error("Error fetching cart:", err);
-//       }
-//     };
-//     fetchCart();
-//   }, []);
-//   const handleDelete = async (item) => {
-//     console.log("Deleting item:", item); // Debugging
-
-//     // Ensure correct dish ID extraction
-//     const dishId = item.dishId ? item.dishId._id || item.dishId : item._id;  
-//     console.log("Extracted Dish ID:", dishId); // Debugging
-
-//     if (!dishId || typeof dishId !== "string") {
-//         setError("Invalid Food ID");
-//         return;
-//     }
-
-//     try {
-//         const response = await axios.delete(
-//             `http://localhost:3001/api/cart/deletecart/${dishId}`,
-//             {
-//                 headers: {
-//                     Authorization: `Bearer ${localStorage.getItem("token")}`,
-//                 },
-//             }
-//         );
-
-//         setMessage(response.data.message);
-//         setError("");
-//         setCartItems(response.data.cart ? response.data.cart.items : []);
-//         console.log("API Response after delete:", response.data);
-//     } catch (err) {
-//         console.error("Delete Error:", err.response?.data || err);
-//         setError(err.response?.data?.message || "Something went wrong");
-//         setMessage("");
-//     }
-// };
-
-
-
-
-
-
-//   return (
-//     <Container className="delete-dishes-container">
-//       <h2>Delete Dishes from Cart</h2>
-//       {message && <Alert variant="success">{message}</Alert>}
-//       {error && <Alert variant="danger">{error}</Alert>}
-//       <ListGroup>
-//         {cartItems.length > 0 ? (
-//           cartItems.map((item) => (
-//             <ListGroup.Item key={item._id} className="cart-item">
-
-
-//               <span>{item.name}</span>
-//               <Button
-//                 variant="danger"
-//                 onClick={() => handleDelete(item)}
-//               >
-//                 Remove
-//               </Button>
-//             </ListGroup.Item>
-//           ))
-//         ) : (
-//           <p>Your cart is empty.</p>
-//         )}
-//       </ListGroup>
-//     </Container>
-//   );
-// };
-
-// export default DeleteCart;
